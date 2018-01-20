@@ -1,0 +1,22 @@
+[
+    {
+        "name": "Liam",
+        "position": {
+            "anchor": "left",
+            "offset": 100
+        },
+        "text": "Hello World",
+        "color": "black",
+        "size": 20
+    },
+    {
+        "name": "Kelvin",
+        "position": {
+            "anchor": "right",
+            "offset": 100
+        },
+        "text": "dlroW olleH",
+        "color": "#FF0000",
+        "size": 15
+    }
+]
