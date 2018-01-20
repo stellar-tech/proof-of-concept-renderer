@@ -5,21 +5,21 @@
 
 <body>
   <textarea id="json" rows="10" cols="80"></textarea>
-  
+
   <button onclick="render()">RENDER</button><br>
-  
+
   <canvas id="canvas"  width="512px" height="512px" style="border: 1px solid black"></canvas>
-  
+
   <script>
     var objects;
     var canvas=document.getElementById("canvas");
     var context=canvas.getContext("2d");
     function render() {
       objects=JSON.parse(document.getElementById("json").value)
-      
+
       context.fillStyle="white";
       context.fillRect(0,0,512,512);
-      
+
       for (var index in objects) {
         var character=objects[index];
         var position=character.position;
@@ -34,29 +34,31 @@
           alert("ERROR");
           return;
         }
-        
+
         context.fillStyle=character.color;
         context.fillRect(xpos, 512-character.size, character.size, character.size);
-        
+
         context.font="16px monospace";
         context.fillText(character.name, xpos, 512-(2*character.size));
-        
-        context.font="12px sans-serif";
-        
-        if (position.anchor=="left") {
-          context.fillText(character.text, xpos+(5*character.size), 512-(5*character.size));
-          context.beginPath();
-          context.moveTo(xpos+character.size, 512-character.size);
-          context.lineTo(xpos+(5*character.size), 512-(5*character.size));
+
+        if (character.text!==0) {
+          context.font="12px sans-serif";
+
+          if (position.anchor=="left") {
+            context.fillText(character.text, xpos+(5*character.size), 512-(5*character.size));
+            context.beginPath();
+            context.moveTo(xpos+character.size, 512-character.size);
+            context.lineTo(xpos+(5*character.size), 512-(5*character.size));
+          }
+          else {
+            context.fillText(character.text, xpos-(5*character.size), 512-(5*character.size));
+            context.beginPath();
+            context.moveTo(xpos, 512-character.size);
+            context.lineTo(xpos-(5*character.size), 512-(5*character.size));
+          }
+          context.strokeStyle=character.color;
         }
-        else {
-          context.fillText(character.text, xpos-(5*character.size), 512-(5*character.size));
-          context.beginPath();
-          context.moveTo(xpos, 512-character.size);
-          context.lineTo(xpos-(5*character.size), 512-(5*character.size));
-        }
-        context.strokeStyle=character.color;
-        
+
         context.stroke();
       }
     }
