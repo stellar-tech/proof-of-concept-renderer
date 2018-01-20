@@ -14,8 +14,13 @@
     var objects;
     var canvas=document.getElementById("canvas");
     var context=canvas.getContext("2d");
-    function drawCharacterText(text, xloc, yloc) {
+    function drawCharacterText(text, xloc, yloc, lineheight) {
       if (text instanceof Array) {
+        yloc-=(lineheight*(text.length-1));
+        for (var i=0; i<text.length; ++i) {
+          context.fillText(text[i], xloc, yloc);
+          yloc+=lineheight;
+        }
       }
       else {
         context.fillText(text, xloc, yloc);
@@ -53,13 +58,13 @@
           context.font="12px sans-serif";
 
           if (position.anchor=="left") {
-            drawCharacterText(character.text, xpos+(5*character.size), 512-(5*character.size));
+            drawCharacterText(character.text, xpos+(5*character.size), 512-(5*character.size), 16);
             context.beginPath();
             context.moveTo(xpos+character.size, 512-character.size);
             context.lineTo(xpos+(5*character.size), 512-(5*character.size));
           }
           else {
-            drawCharacterText(character.text, xpos-(5*character.size), 512-(5*character.size));
+            drawCharacterText(character.text, xpos-(5*character.size), 512-(5*character.size), 16);
             context.beginPath();
             context.moveTo(xpos, 512-character.size);
             context.lineTo(xpos-(5*character.size), 512-(5*character.size));
