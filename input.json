@@ -28,5 +28,15 @@
         "text": "Kelvin just showered, for the first time in his life.",
         "color": "purple",
         "size": 32
+    },
+    {
+        "name": "Boosted Bonobo (magix430)",
+        "position": {
+            "anchor": "left",
+            "offset": 0
+        },
+        "text": "ThEy ShOuLd BrInG bAcK sWoRd oF tHe OcCuLt!",
+        "color": "orange",
+        "size": 40
     }
 ]
