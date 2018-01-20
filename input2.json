@@ -1,0 +1,37 @@
+[
+    {
+        "name": "Kelvin",
+        "position": {
+            "anchor": "left",
+            "offset": 50
+        },
+        "text": ["So... you're",
+                 "        THAT",
+                 "        guy."],
+        "color": "black",
+        "size": 20
+    },
+    {
+        "name": "Xorex",
+        "position": {
+            "anchor": "left",
+            "offset": 280
+        },
+        "text": ["My name is",
+                 "      Xorex.",
+                 "      This is Amina,",
+                 "      my assistant."],
+        "color": "black",
+        "size": 20
+    },
+    {
+        "name": "Amina",
+        "position": {
+            "anchor": "right",
+            "offset": 100
+        },
+        "text": 0,
+        "color": "black",
+        "size": 20
+    }
+]
