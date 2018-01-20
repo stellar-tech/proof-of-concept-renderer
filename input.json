@@ -18,5 +18,15 @@
         "text": "dlroW olleH",
         "color": "#FF0000",
         "size": 15
+    },
+    {
+        "name": "Vishnu",
+        "position": {
+            "anchor": "right",
+            "offset": 240
+        },
+        "text": "Kelvin just showered, for the first time in his life.",
+        "color": "purple",
+        "size": 32
     }
 ]
